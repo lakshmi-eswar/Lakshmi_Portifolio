@@ -343,3 +343,44 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout(startCounterAnimations, 50);
 
 }); // end DOMContentLoaded
+
+// Also ensure animations run on window load as backup
+window.addEventListener('load', () => {
+  console.log('Window load event fired');
+  setTimeout(() => {
+    const counters = document.querySelectorAll('[data-count]');
+    if (counters.length > 0) {
+      // Check if animations already ran
+      const firstCounter = counters[0];
+      if (firstCounter.textContent === '0+' || firstCounter.textContent === '0') {
+        console.log('Animations did not run, triggering now...');
+        // Re-run counter animations
+        const animateAll = () => {
+          counters.forEach((counter) => {
+            const target = parseInt(counter.getAttribute('data-count'), 10);
+            const suffix = counter.getAttribute('data-suffix') || '';
+            const startValue = 0;
+            const duration = 800;
+            const startTime = Date.now();
+            
+            const animate = () => {
+              const elapsed = Date.now() - startTime;
+              const progress = Math.min(elapsed / duration, 1);
+              const easeProgress = 1 - Math.pow(1 - progress, 3);
+              const current = Math.floor(startValue + (target - startValue) * easeProgress);
+              counter.textContent = current + suffix;
+              
+              if (progress < 1) {
+                requestAnimationFrame(animate);
+              } else {
+                counter.textContent = target + suffix;
+              }
+            };
+            animate();
+          });
+        };
+        animateAll();
+      }
+    }
+  }, 100);
+});
