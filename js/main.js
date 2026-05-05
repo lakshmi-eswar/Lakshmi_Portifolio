@@ -295,29 +295,41 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ── Counter Animation ── */
+  function animateCounter(el) {
+    const target = parseInt(el.getAttribute('data-count'), 10);
+    const suffix = el.getAttribute('data-suffix') || '';
+    const duration = 1500;
+    const start = performance.now();
+    
+    function update(now) {
+      const t = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - t, 3);
+      el.textContent = Math.round(eased * target) + suffix;
+      if (t < 1) requestAnimationFrame(update);
+    }
+    
+    requestAnimationFrame(update);
+  }
+  
   const counters = document.querySelectorAll('[data-count]');
   let animated = new Set();
   
+  // Animate immediately for visible counters
+  setTimeout(() => {
+    counters.forEach(el => {
+      if (!animated.has(el) && el.offsetParent !== null) {
+        animated.add(el);
+        animateCounter(el);
+      }
+    });
+  }, 200);
+  
+  // Also set up intersection observer for scroll-in animations
   const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (!entry.isIntersecting || animated.has(entry.target)) return;
       animated.add(entry.target);
-      
-      const el = entry.target;
-      const target = parseInt(el.getAttribute('data-count'), 10);
-      const suffix = el.getAttribute('data-suffix') || '';
-      const duration = 1500;
-      const start = performance.now();
-      
-      function update(now) {
-        const t = Math.min((now - start) / duration, 1);
-        const eased = 1 - Math.pow(1 - t, 3);
-        el.textContent = Math.round(eased * target) + suffix;
-        if (t < 1) requestAnimationFrame(update);
-      }
-      
-      requestAnimationFrame(update);
-      counterObserver.unobserve(el);
+      animateCounter(entry.target);
     });
   }, { threshold: 0, rootMargin: '50px' });
   
