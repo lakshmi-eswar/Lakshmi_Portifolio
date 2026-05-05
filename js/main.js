@@ -151,7 +151,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const successMsg = document.getElementById('form-success');
 
   // Initialize EmailJS (replace with your Public Key from emailjs.com)
-  emailjs.init('L3wzfQ24xaXVhp8C0');
+  if (typeof emailjs !== 'undefined') {
+    emailjs.init('L3wzfQ24xaXVhp8C0');
+  } else {
+    console.warn('EmailJS library not loaded');
+  }
 
   if (formEl) {
     const inputs = formEl.querySelectorAll('.form-input');
