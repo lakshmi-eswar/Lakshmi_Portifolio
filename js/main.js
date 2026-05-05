@@ -297,10 +297,18 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── Counter Animation ── */
   function startCounterAnimations() {
     const counters = document.querySelectorAll('[data-count]');
+    console.log('Found counters:', counters.length);
     
-    counters.forEach(counter => {
+    if (counters.length === 0) {
+      console.warn('No counters found with [data-count] attribute');
+      return;
+    }
+    
+    counters.forEach((counter, index) => {
       const target = parseInt(counter.getAttribute('data-count'), 10);
       const suffix = counter.getAttribute('data-suffix') || '';
+      console.log(`Counter ${index}: target=${target}, suffix=${suffix}, current=${counter.textContent}`);
+      
       const startValue = 0;
       const duration = 800;
       const startTime = Date.now();
@@ -319,6 +327,7 @@ document.addEventListener('DOMContentLoaded', () => {
           requestAnimationFrame(animateCounter);
         } else {
           counter.textContent = target + suffix;
+          console.log(`Animation complete for counter ${index}`);
         }
       };
       
@@ -326,7 +335,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
   
-  // Start animations immediately when page loads
-  startCounterAnimations();
+  // Start animations with a small delay to ensure DOM is ready
+  setTimeout(startCounterAnimations, 50);
 
 }); // end DOMContentLoaded
