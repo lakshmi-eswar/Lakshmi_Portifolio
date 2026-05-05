@@ -313,7 +313,7 @@ document.addEventListener('DOMContentLoaded', () => {
       requestAnimationFrame(update);
       counterObserver.unobserve(el);
     });
-  }, { threshold: 0.5 });
+  }, { threshold: 0.1 });
   counters.forEach(c => counterObserver.observe(c));
 
 }); // end DOMContentLoaded
