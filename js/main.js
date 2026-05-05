@@ -344,43 +344,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
 }); // end DOMContentLoaded
 
-// Also ensure animations run on window load as backup
-window.addEventListener('load', () => {
-  console.log('Window load event fired');
-  setTimeout(() => {
+// ── Counter Animation (Outside DOMContentLoaded for reliability) ──
+(function initCounters() {
+  function animateCounters() {
+    console.log('Animating counters...');
     const counters = document.querySelectorAll('[data-count]');
-    if (counters.length > 0) {
-      // Check if animations already ran
-      const firstCounter = counters[0];
-      if (firstCounter.textContent === '0+' || firstCounter.textContent === '0') {
-        console.log('Animations did not run, triggering now...');
-        // Re-run counter animations
-        const animateAll = () => {
-          counters.forEach((counter) => {
-            const target = parseInt(counter.getAttribute('data-count'), 10);
-            const suffix = counter.getAttribute('data-suffix') || '';
-            const startValue = 0;
-            const duration = 800;
-            const startTime = Date.now();
-            
-            const animate = () => {
-              const elapsed = Date.now() - startTime;
-              const progress = Math.min(elapsed / duration, 1);
-              const easeProgress = 1 - Math.pow(1 - progress, 3);
-              const current = Math.floor(startValue + (target - startValue) * easeProgress);
-              counter.textContent = current + suffix;
-              
-              if (progress < 1) {
-                requestAnimationFrame(animate);
-              } else {
-                counter.textContent = target + suffix;
-              }
-            };
-            animate();
-          });
-        };
-        animateAll();
-      }
-    }
-  }, 100);
-});
+    console.log('Found', counters.length, 'counters');
+    
+    counters.forEach((el) => {
+      const target = parseInt(el.getAttribute('data-count'), 10);
+      const suffix = el.getAttribute('data-suffix') || '';
+      let current = 0;
+      
+      const updateCounter = () => {
+        el.textContent = current + suffix;
+        if (current < target) {
+          // Increment faster at beginning, slower at end
+          const increment = Math.ceil((target - current) / 10);
+          current += increment;
+          if (current > target) current = target;
+          setTimeout(updateCounter, 50);
+        }
+      };
+      
+      updateCounter();
+    });
+  }
+  
+  // Try on DOMContentLoaded first
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', animateCounters);
+  } else {
+    // Already loaded
+    animateCounters();
+  }
+  
+  // Also try on window load as backup
+  window.addEventListener('load', animateCounters);
+})();
