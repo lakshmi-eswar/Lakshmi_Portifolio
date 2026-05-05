@@ -344,6 +344,116 @@ document.addEventListener('DOMContentLoaded', () => {
 
 }); // end DOMContentLoaded
 
+// ── Fetch Real-time Stats from APIs ──
+(async function fetchStats() {
+  try {
+    // Fetch LeetCode stats
+    const leetcodeQuery = {
+      query: `
+        query getUserProfile($username: String!) {
+          allQuestionsCount {
+            difficulty
+            count
+          }
+          matchedUser(username: $username) {
+            username
+            profile {
+              realName
+            }
+            submitStatsGlobal {
+              acSubmissionNum {
+                difficulty
+                count
+              }
+            }
+          }
+        }
+      `,
+      variables: {
+        username: 'CS24345A0512'
+      }
+    };
+
+    const leetcodeResponse = await fetch('https://leetcode.com/graphql/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(leetcodeQuery)
+    });
+
+    if (leetcodeResponse.ok) {
+      const leetcodeData = await leetcodeResponse.json();
+      const leetcodeCount = leetcodeData?.data?.matchedUser?.submitStatsGlobal?.acSubmissionNum?.[0]?.count || 300;
+      console.log('LeetCode problems solved:', leetcodeCount);
+      
+      // Update LeetCode counter
+      const leetcodeCounter = document.querySelector('[data-count="300"]');
+      if (leetcodeCounter) {
+        leetcodeCounter.setAttribute('data-count', leetcodeCount);
+      }
+    }
+  } catch (error) {
+    console.warn('Error fetching LeetCode stats:', error);
+  }
+
+  try {
+    // Fetch CodeChef stats via their API
+    const codechefResponse = await fetch('https://www.codechef.com/api/users/lakshmi_eswar', {
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (codechefResponse.ok) {
+      const codechefData = await codechefResponse.json();
+      const codechefCount = codechefData?.user?.allContestsRating?.[0]?.highest_rating || 400;
+      console.log('CodeChef stats fetched');
+      
+      // Try to get contest count instead
+      const contestCount = codechefData?.user?.globalRanking || 400;
+      
+      // Update CodeChef counter
+      const codechefCounter = document.querySelector('[data-count="400"]');
+      if (codechefCounter && contestCount > 0) {
+        codechefCounter.setAttribute('data-count', contestCount);
+      }
+    }
+  } catch (error) {
+    console.warn('Error fetching CodeChef stats:', error);
+  }
+
+  // Re-trigger counter animations with updated values after a delay
+  setTimeout(() => {
+    animateCountersWithDynamicData();
+  }, 500);
+})();
+
+// ── Counter Animation with Dynamic Data ──
+function animateCountersWithDynamicData() {
+  console.log('Animating counters with dynamic data...');
+  const counters = document.querySelectorAll('[data-count]');
+  console.log('Found', counters.length, 'counters');
+  
+  counters.forEach((el) => {
+    const target = parseInt(el.getAttribute('data-count'), 10);
+    const suffix = el.getAttribute('data-suffix') || '';
+    let current = 0;
+    
+    const updateCounter = () => {
+      el.textContent = current + suffix;
+      if (current < target) {
+        const increment = Math.ceil((target - current) / 10);
+        current += increment;
+        if (current > target) current = target;
+        setTimeout(updateCounter, 50);
+      }
+    };
+    
+    updateCounter();
+  });
+}
+
 // ── Counter Animation (Outside DOMContentLoaded for reliability) ──
 (function initCounters() {
   function animateCounters() {
@@ -359,7 +469,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const updateCounter = () => {
         el.textContent = current + suffix;
         if (current < target) {
-          // Increment faster at beginning, slower at end
           const increment = Math.ceil((target - current) / 10);
           current += increment;
           if (current > target) current = target;
