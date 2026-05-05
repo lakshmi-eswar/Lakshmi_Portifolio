@@ -298,7 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function animateCounter(el) {
     const target = parseInt(el.getAttribute('data-count'), 10);
     const suffix = el.getAttribute('data-suffix') || '';
-    const duration = 1500;
+    const duration = 800;
     const start = performance.now();
     
     function update(now) {
@@ -322,7 +322,7 @@ document.addEventListener('DOMContentLoaded', () => {
         animateCounter(el);
       }
     });
-  }, 200);
+  }, 100);
   
   // Also set up intersection observer for scroll-in animations
   const counterObserver = new IntersectionObserver((entries) => {
