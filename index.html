@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Lakshmi Pandranki — Full Stack Developer, Machine Learning Engineer & Cybersecurity Researcher. B.Tech CSE student with 9.03 CGPA, 300+ LeetCode problems solved." />
+  <meta name="keywords" content="Lakshmi Pandranki, Full Stack Developer, Machine Learning, Cybersecurity, MERN Stack, Python, React, Portfolio" />
+  <meta name="author" content="Lakshmi Pandranki" />
+  <meta property="og:title" content="Lakshmi Pandranki — Developer & ML Engineer" />
+  <meta property="og:description" content="Full Stack Developer, Machine Learning Engineer & Cybersecurity Researcher from Andhra Pradesh, India." />
+  <meta property="og:type" content="website" />
+  <title>Lakshmi Pandranki — Developer & ML Engineer</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Inline critical: theme flash prevention -->
+  <script>
+    (function(){
+      var t=localStorage.getItem('theme');
+      if(t==='dark') document.documentElement.classList.add('dark');
+    })();
+  </script>
+</head>
+
+<body>
+
+<!-- ── Scroll Progress ── -->
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<!-- ── Cursor Glow ── -->
+<div class="cursor-glow" aria-hidden="true"></div>
+
+<!-- ── Social Sidebar ── -->
+<aside class="social-bar" aria-label="Social links">
+  <a href="https://www.linkedin.com/in/lakshmi-pandranki-721072331/" target="_blank" rel="noopener" aria-label="LinkedIn" class="glass">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+  </a>
+  <a href="https://github.com/lakshmi-eswar/" target="_blank" rel="noopener" aria-label="GitHub" class="glass">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+  </a>
+  <a href="mailto:lakshmipandranki006@gmail.com" aria-label="Email" class="glass">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+  </a>
+</aside>
+
+<!-- ── Mobile Menu ── -->
+<nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation">
+  <a href="#hero">Home</a>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#education">Education</a>
+  <a href="#experience">Experience</a>
+  <a href="#certifications">Achievements</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- ── Navbar ── -->
+<header id="navbar" role="banner">
+  <div class="nav-inner glass">
+    <a href="#hero" class="nav-logo" aria-label="Lakshmi Pandranki home">
+      lakshmi<span class="gradient-text">.</span>dev
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+        <!-- Sun icon -->
+        <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <!-- Moon icon -->
+        <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="assets/Lakshmi_Pandranki_Resume.pdf" download class="btn-primary" style="height:40px;padding:0 1.25rem;font-size:0.8rem;" aria-label="Download Resume">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Resume
+      </a>
+      <button id="hamburger" class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     HERO SECTION
+     ============================================================ -->
+<section id="hero" aria-labelledby="hero-heading">
+  <!-- Floating orbs -->
+  <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+  <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <!-- Availability badge -->
+    <div class="hero-badge glass" role="status">
+      <span class="hero-badge-dot" aria-hidden="true"></span>
+      Open to internships &amp; opportunities
+    </div>
+
+    <!-- Main heading -->
+    <h1 class="hero-title" id="hero-heading">
+      Hi, I'm <span class="gradient-text">Lakshmi</span><br />
+      a passionate<br />
+      <span id="typed-role" aria-live="polite" style="border-right:2px solid var(--primary);padding-right:2px;min-width:10px;display:inline-block;vertical-align:bottom;">Full Stack Developer</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      B.Tech CSE student at GMR Institute of Technology with a <strong>9.03 CGPA</strong>,
+      building intelligent systems at the intersection of <em>web development</em>,
+      <em>machine learning</em>, and <em>cybersecurity</em>.
+    </p>
+
+    <div class="hero-cta">
+      <a href="#projects" class="btn-primary glow-hover" aria-label="View my projects">
+        View My Work
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="#contact" class="btn-secondary glass" aria-label="Contact me">
+        Let's Connect
+      </a>
+    </div>
+
+    <!-- Stats -->
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num"><span data-count="300" data-suffix="+">0+</span></div>
+        <div class="hero-stat-label">LeetCode Problems</div>
+      </div>
+      <div class="hero-stat-divider" aria-hidden="true"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-num"><span data-count="400" data-suffix="+">0+</span></div>
+        <div class="hero-stat-label">CodeChef Problems</div>
+      </div>
+      <div class="hero-stat-divider" aria-hidden="true"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-num"><span data-count="9" data-suffix=".03">0</span></div>
+        <div class="hero-stat-label">CGPA / 10</div>
+      </div>
+      <div class="hero-stat-divider" aria-hidden="true"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-num"><span data-count="4" data-suffix="+">0+</span></div>
+        <div class="hero-stat-label">Projects Built</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="scroll-indicator" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ABOUT SECTION
+     ============================================================ -->
+<section id="about" aria-labelledby="about-heading">
+  <div class="container">
+    <div class="about-grid">
+      <!-- Left: Text content -->
+      <div>
+        <p class="section-tag reveal">About Me</p>
+        <h2 class="section-title reveal reveal-delay-1" id="about-heading">
+          Building at the edge of <span class="gradient-text">code & intelligence.</span>
+        </h2>
+
+        <p class="about-highlight reveal reveal-delay-2" style="margin-top:1.5rem; font-size:1rem; line-height:1.8;">
+          I'm <strong>Pandranki Lakshmi</strong>, a Computer Science & Engineering student at
+          <strong>GMR Institute of Technology, Rajam</strong>, with a stellar 9.03 CGPA.
+          My journey spans from full-stack web development to machine learning pipelines
+          and cybersecurity research — I love building systems that are both intelligent and resilient.
+        </p>
+
+        <p class="about-highlight reveal reveal-delay-3">
+          With hands-on experience at <strong>RINL (SAP modules)</strong>, an ML internship at
+          <strong>Syberspring Informatics</strong>, and a Cyber Security Research stint at
+          <strong>Gramax</strong>, I've translated academic excellence into real-world impact.
+          I've solved <strong>300+ LeetCode</strong> and <strong>400+ CodeChef</strong> problems, participated
+          in national hackathons like Adobe India Hackathon and Flipkart Grid 5.0 &amp; 6.0.
+        </p>
+
+        <!-- Interest badges -->
+        <div class="about-badge-row reveal reveal-delay-4">
+          <span class="about-badge glass">🤖 Machine Learning</span>
+          <span class="about-badge glass">🌐 Full Stack Dev</span>
+          <span class="about-badge glass">🔐 Cybersecurity</span>
+          <span class="about-badge glass">📊 Data Science</span>
+          <span class="about-badge glass">✨ Generative AI</span>
+        </div>
+      </div>
+
+      <!-- Right: Stats cards -->
+      <div>
+        <div class="about-card glass reveal reveal-delay-1" style="margin-bottom:1.25rem;">
+          <div class="metric-grid">
+            <div class="metric-item glass">
+              <div class="metric-value">9.03</div>
+              <div class="metric-label">CGPA (B.Tech)</div>
+            </div>
+            <div class="metric-item glass">
+              <div class="metric-value">96.89%</div>
+              <div class="metric-label">Diploma Score</div>
+            </div>
+            <div class="metric-item glass">
+              <div class="metric-value">10/10</div>
+              <div class="metric-label">SSC CGPA</div>
+            </div>
+            <div class="metric-item glass">
+              <div class="metric-value">2★</div>
+              <div class="metric-label">CodeChef Rating</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-card glass reveal reveal-delay-2">
+          <p style="font-size:0.8rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--primary);margin-bottom:1rem;">Currently Exploring</p>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:0.625rem;">
+            <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.875rem;">
+              <span style="width:8px;height:8px;border-radius:50%;background:var(--gradient-primary);flex-shrink:0;box-shadow:0 0 8px oklch(0.55 0.22 285/0.5)"></span>
+              Large Language Models & RAG systems
+            </li>
+            <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.875rem;">
+              <span style="width:8px;height:8px;border-radius:50%;background:var(--gradient-primary);flex-shrink:0;box-shadow:0 0 8px oklch(0.55 0.22 285/0.5)"></span>
+              Advanced Deep Learning architectures
+            </li>
+            <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.875rem;">
+              <span style="width:8px;height:8px;border-radius:50%;background:var(--gradient-primary);flex-shrink:0;box-shadow:0 0 8px oklch(0.55 0.22 285/0.5)"></span>
+              Cloud-native microservices architecture
+            </li>
+            <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.875rem;">
+              <span style="width:8px;height:8px;border-radius:50%;background:var(--gradient-primary);flex-shrink:0;box-shadow:0 0 8px oklch(0.55 0.22 285/0.5)"></span>
+              Threat Intelligence & Ethical Hacking
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SKILLS SECTION
+     ============================================================ -->
+<section id="skills" aria-labelledby="skills-heading">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto 0.5rem;">
+      <p class="section-tag">Toolbox</p>
+      <h2 class="section-title" id="skills-heading">
+        Technologies I work with<span class="gradient-text">.</span>
+      </h2>
+    </div>
+
+    <div class="skills-categories">
+      <!-- Languages -->
+      <div class="skill-category glass reveal">
+        <div class="skill-cat-icon" aria-hidden="true">💻</div>
+        <p class="skill-cat-title">Languages</p>
+        <div class="skill-tags">
+          <span class="skill-tag">C</span>
+          <span class="skill-tag">C++</span>
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">PHP</span>
+        </div>
+      </div>
+
+      <!-- Web & Frameworks -->
+      <div class="skill-category glass reveal reveal-delay-1">
+        <div class="skill-cat-icon" aria-hidden="true">🌐</div>
+        <p class="skill-cat-title">Web & Frameworks</p>
+        <div class="skill-tags">
+          <span class="skill-tag">HTML5</span>
+          <span class="skill-tag">CSS3</span>
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">Express.js</span>
+          <span class="skill-tag">Django</span>
+          <span class="skill-tag">Flutter</span>
+        </div>
+      </div>
+
+      <!-- ML & AI -->
+      <div class="skill-category glass reveal reveal-delay-2">
+        <div class="skill-cat-icon" aria-hidden="true">🤖</div>
+        <p class="skill-cat-title">ML & AI</p>
+        <div class="skill-tags">
+          <span class="skill-tag">OpenCV</span>
+          <span class="skill-tag">Scikit-learn</span>
+          <span class="skill-tag">Pandas</span>
+          <span class="skill-tag">NumPy</span>
+          <span class="skill-tag">Deep Learning</span>
+          <span class="skill-tag">NLP</span>
+        </div>
+      </div>
+
+      <!-- Databases -->
+      <div class="skill-category glass reveal reveal-delay-1">
+        <div class="skill-cat-icon" aria-hidden="true">🗄️</div>
+        <p class="skill-cat-title">Databases</p>
+        <div class="skill-tags">
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">MongoDB</span>
+          <span class="skill-tag">PostgreSQL</span>
+        </div>
+      </div>
+
+      <!-- Tools & DevOps -->
+      <div class="skill-category glass reveal reveal-delay-2">
+        <div class="skill-cat-icon" aria-hidden="true">🛠️</div>
+        <p class="skill-cat-title">Tools & DevOps</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">GitHub</span>
+          <span class="skill-tag">VS Code</span>
+          <span class="skill-tag">SAP</span>
+          <span class="skill-tag">Linux</span>
+        </div>
+      </div>
+
+      <!-- Core CS -->
+      <div class="skill-category glass reveal reveal-delay-3">
+        <div class="skill-cat-icon" aria-hidden="true">📚</div>
+        <p class="skill-cat-title">Core CS</p>
+        <div class="skill-tags">
+          <span class="skill-tag">DSA</span>
+          <span class="skill-tag">OOP</span>
+          <span class="skill-tag">DBMS</span>
+          <span class="skill-tag">OS</span>
+          <span class="skill-tag">Networks</span>
+          <span class="skill-tag">Cybersecurity</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Skill Bars -->
+    <div class="skill-bar-list reveal" style="max-width:640px;margin:3.5rem auto 0;">
+      <p style="font-size:0.8rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--primary);margin-bottom:1.5rem;text-align:center;">Proficiency Levels</p>
+      <div class="skill-bar-item">
+        <div class="skill-bar-header"><span>Python & Machine Learning</span><span style="color:var(--primary)">90%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+      </div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-header"><span>Full Stack (MERN)</span><span style="color:var(--primary)">85%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+      </div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-header"><span>Data Structures & Algorithms</span><span style="color:var(--primary)">82%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="82"></div></div>
+      </div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-header"><span>Cybersecurity Research</span><span style="color:var(--primary)">75%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
+      </div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-header"><span>Database Design & SQL</span><span style="color:var(--primary)">80%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROJECTS SECTION
+     ============================================================ -->
+<section id="projects" aria-labelledby="projects-heading">
+  <div class="container">
+    <div class="projects-header">
+      <div>
+        <p class="section-tag reveal">Selected Work</p>
+        <h2 class="section-title reveal reveal-delay-1" id="projects-heading">
+          Projects built<br /><span class="gradient-text">with purpose.</span>
+        </h2>
+      </div>
+      <div class="filter-tabs reveal reveal-delay-2" role="group" aria-label="Filter projects">
+        <button class="filter-tab active" data-filter="all">All</button>
+        <button class="filter-tab" data-filter="ml">ML / AI</button>
+        <button class="filter-tab" data-filter="web">Web Dev</button>
+        <button class="filter-tab" data-filter="nlp">NLP</button>
+      </div>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- 1. Farmer's E-Commerce (Featured) -->
+      <article class="project-card featured glass tilt-card reveal"
+               data-category="web"
+               aria-labelledby="proj1-title">
+        <div class="project-accent" aria-hidden="true"></div>
+        <div class="project-card-inner">
+          <div class="project-tags-row">
+            <div style="display:flex;gap:0.375rem;flex-wrap:wrap;">
+              <span class="project-tag">MERN Stack</span>
+              <span class="project-tag">React</span>
+              <span class="project-tag">Node.js</span>
+              <span class="project-tag">MongoDB</span>
+            </div>
+            <div class="project-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </div>
+          </div>
+          <div>
+            <h3 class="project-title" id="proj1-title">Farmer's E-Commerce Platform</h3>
+            <p class="project-desc">
+              A full-stack marketplace enabling local farmers to list and sell fresh produce directly to consumers online.
+              Includes user authentication, product management, order tracking, and a responsive storefront — connecting
+              agriculture directly to the digital economy.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. Driver Drowsiness Detection -->
+      <article class="project-card medium glass tilt-card reveal reveal-delay-1"
+               data-category="ml"
+               aria-labelledby="proj2-title">
+        <div class="project-card-inner">
+          <div class="project-tags-row">
+            <div style="display:flex;gap:0.375rem;flex-wrap:wrap;">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">OpenCV</span>
+              <span class="project-tag">ML</span>
+            </div>
+            <div class="project-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </div>
+          </div>
+          <div>
+            <h3 class="project-title" id="proj2-title">Driver Drowsiness Detection</h3>
+            <p class="project-desc">Real-time facial landmark analysis + ML classification to trigger safety alerts before fatigue causes accidents.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. Smart ICD Code Assistant -->
+      <article class="project-card medium glass tilt-card reveal reveal-delay-2"
+               data-category="nlp ml"
+               aria-labelledby="proj3-title">
+        <div class="project-card-inner">
+          <div class="project-tags-row">
+            <div style="display:flex;gap:0.375rem;flex-wrap:wrap;">
+              <span class="project-tag">NLP</span>
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Healthcare AI</span>
+            </div>
+            <div class="project-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </div>
+          </div>
+          <div>
+            <h3 class="project-title" id="proj3-title">Smart ICD Code Assistant</h3>
+            <p class="project-desc">Automatically detects and predicts ICD disease codes from clinical notes using advanced NLP — reducing diagnostic coding time.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. eDNA Species Analysis -->
+      <article class="project-card half glass tilt-card reveal reveal-delay-1"
+               data-category="ml"
+               aria-labelledby="proj4-title">
+        <div class="project-card-inner">
+          <div class="project-tags-row">
+            <div style="display:flex;gap:0.375rem;flex-wrap:wrap;">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">ML Pipelines</span>
+              <span class="project-tag">Bioinformatics</span>
+            </div>
+            <div class="project-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </div>
+          </div>
+          <div>
+            <h3 class="project-title" id="proj4-title">eDNA Species Analysis System</h3>
+            <p class="project-desc">ML pipelines to classify known species and identify unknown organisms from environmental DNA samples with high accuracy.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. Placeholder for future project -->
+      <article class="project-card half glass tilt-card reveal reveal-delay-2"
+               data-category="web ml"
+               aria-labelledby="proj5-title"
+               style="background: var(--glass-bg); display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.75rem;text-align:center;">
+        <div style="font-size:2rem;" aria-hidden="true">🚀</div>
+        <p class="project-title" id="proj5-title" style="font-size:1.1rem;">More Coming Soon</p>
+        <p class="project-desc" style="font-size:0.8rem;max-width:200px;">Building something new at the intersection of GenAI & security.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     EDUCATION SECTION
+     ============================================================ -->
+<section id="education" aria-labelledby="education-heading">
+  <div class="container" style="max-width:900px;">
+    <div style="text-align:center;">
+      <p class="section-tag reveal">Education</p>
+      <h2 class="section-title reveal reveal-delay-1" id="education-heading">
+        Academic<span class="gradient-text"> journey.</span>
+      </h2>
+    </div>
+
+    <div class="education-timeline">
+
+      <!-- B.Tech -->
+      <div class="edu-item">
+        <div class="edu-year">
+          <div class="edu-year-label">B.Tech</div>
+          <div class="edu-year-range">2024 – Present</div>
+        </div>
+        <div class="edu-connector">
+          <div class="edu-card glass reveal">
+            <div class="edu-degree">
+              B.Tech in Computer Science &amp; Engineering
+              <span class="edu-score">9.03 CGPA</span>
+            </div>
+            <div class="edu-school">GMR Institute of Technology, Rajam</div>
+            <div class="edu-detail">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Currently pursuing
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Diploma -->
+      <div class="edu-item">
+        <div class="edu-year">
+          <div class="edu-year-label">Diploma</div>
+          <div class="edu-year-range">2021 – 2024</div>
+        </div>
+        <div class="edu-connector">
+          <div class="edu-card glass reveal reveal-delay-1">
+            <div class="edu-degree">
+              Diploma in Computer Science &amp; Engineering
+              <span class="edu-score">96.89%</span>
+            </div>
+            <div class="edu-school">Government Polytechnic for Women, Bheemunipatnam</div>
+            <div class="edu-detail">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Completed with distinction
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SSC -->
+      <div class="edu-item">
+        <div class="edu-year">
+          <div class="edu-year-label">SSC</div>
+          <div class="edu-year-range">2021</div>
+        </div>
+        <div class="edu-connector">
+          <div class="edu-card glass reveal reveal-delay-2">
+            <div class="edu-degree">
+              Secondary School Certificate (SSC)
+              <span class="edu-score">10 / 10</span>
+            </div>
+            <div class="edu-school">AP Residential School (Girls), Vomaravalli</div>
+            <div class="edu-detail">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              Perfect score — State topper
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     EXPERIENCE SECTION
+     ============================================================ -->
+<section id="experience" aria-labelledby="experience-heading">
+  <div class="container">
+    <div style="text-align:center;">
+      <p class="section-tag reveal">Internships</p>
+      <h2 class="section-title reveal reveal-delay-1" id="experience-heading">
+        Real-world<span class="gradient-text"> experience.</span>
+      </h2>
+    </div>
+
+    <div class="experience-list">
+
+      <!-- RINL -->
+      <div class="exp-card glass reveal">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Industrial Intern — SAP Modules</div>
+            <div class="exp-company">RINL (Rashtriya Ispat Nigam Ltd.) · Visakhapatnam</div>
+          </div>
+          <div class="exp-meta">
+            <span class="exp-badge">6 Months</span>
+            <span class="exp-badge">On-site</span>
+          </div>
+        </div>
+        <p class="exp-desc">
+          Gained deep hands-on experience across SAP modules for enterprise resource planning and industrial process management.
+          Worked directly with production and inventory systems at one of India's largest steel plants, understanding how
+          large-scale ERP integrates with real-world manufacturing workflows.
+        </p>
+      </div>
+
+      <!-- Syberspring -->
+      <div class="exp-card glass reveal reveal-delay-1">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Machine Learning Intern</div>
+            <div class="exp-company">Syberspring Informatics · Palakonda</div>
+          </div>
+          <div class="exp-meta">
+            <span class="exp-badge">Short-term</span>
+            <span class="exp-badge">Remote</span>
+          </div>
+        </div>
+        <p class="exp-desc">
+          Built and evaluated multiple ML models using Python and Scikit-learn on real-world datasets.
+          Gained practical experience designing feature engineering pipelines, training classifiers, and
+          evaluating performance using cross-validation and confusion matrices.
+        </p>
+      </div>
+
+      <!-- Gramax -->
+      <div class="exp-card glass reveal reveal-delay-2">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Cyber Security Research Intern</div>
+            <div class="exp-company">Gramax · Remote</div>
+          </div>
+          <div class="exp-meta">
+            <span class="exp-badge">Short-term</span>
+            <span class="exp-badge">Remote</span>
+          </div>
+        </div>
+        <p class="exp-desc">
+          Conducted research and analysis on cyber security threats and vulnerabilities targeting
+          Critical Information Infrastructure (CII). Studied attack vectors, compiled threat intelligence reports,
+          and proposed mitigation strategies aligned with national cybersecurity frameworks.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CERTIFICATIONS & ACHIEVEMENTS SECTION
+     ============================================================ -->
+<section id="certifications" aria-labelledby="cert-heading">
+  <div class="container">
+    <div style="text-align:center;">
+      <p class="section-tag reveal">Achievements</p>
+      <h2 class="section-title reveal reveal-delay-1" id="cert-heading">
+        Certifications &<span class="gradient-text"> competitions.</span>
+      </h2>
+    </div>
+
+    <!-- Certifications -->
+    <h3 class="reveal" style="font-size:0.8rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--primary);margin-top:3rem;margin-bottom:0.75rem;">Certifications</h3>
+    <div class="cert-grid">
+      <div class="cert-card glass reveal">
+        <div class="cert-icon" aria-hidden="true">🔐</div>
+        <div>
+          <div class="cert-title">Secure Your Identity: Microsoft Entra ID</div>
+          <div class="cert-issuer">Microsoft</div>
+        </div>
+      </div>
+      <div class="cert-card glass reveal reveal-delay-1">
+        <div class="cert-icon" aria-hidden="true">⚠️</div>
+        <div>
+          <div class="cert-title">Cyber Threats, Attacks &amp; Mitigations</div>
+          <div class="cert-issuer">Microsoft</div>
+        </div>
+      </div>
+      <div class="cert-card glass reveal reveal-delay-2">
+        <div class="cert-icon" aria-hidden="true">🐍</div>
+        <div>
+          <div class="cert-title">Joy of Computing Using Python</div>
+          <div class="cert-issuer">NPTEL</div>
+        </div>
+      </div>
+      <div class="cert-card glass reveal reveal-delay-3">
+        <div class="cert-icon" aria-hidden="true">🛡️</div>
+        <div>
+          <div class="cert-title">Ethical Hacking</div>
+          <div class="cert-issuer">Professional Certification</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Competitions & Participations -->
+    <h3 class="reveal" style="font-size:0.8rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--primary);margin-top:3rem;margin-bottom:0.75rem;">Hackathons & Competitions</h3>
+    <div class="achievements-grid">
+      <div class="achievement-item glass reveal">
+        <div class="achievement-dot" aria-hidden="true"></div>
+        TCS CodeVita Season 12 &amp; 13
+      </div>
+      <div class="achievement-item glass reveal reveal-delay-1">
+        <div class="achievement-dot" aria-hidden="true"></div>
+        Flipkart Grid 5.0 &amp; 6.0
+      </div>
+      <div class="achievement-item glass reveal reveal-delay-2">
+        <div class="achievement-dot" aria-hidden="true"></div>
+        Adobe India Hackathon
+      </div>
+      <div class="achievement-item glass reveal reveal-delay-3">
+        <div class="achievement-dot" aria-hidden="true"></div>
+        GenAI Hackathon
+      </div>
+      <div class="achievement-item glass reveal reveal-delay-1">
+        <div class="achievement-dot" aria-hidden="true"></div>
+        Tata Crucible Campus Quiz
+      </div>
+      <div class="achievement-item glass reveal reveal-delay-2">
+        <div class="achievement-dot" aria-hidden="true"></div>
+        LeetCode — 300+ Problems Solved
+      </div>
+      <div class="achievement-item glass reveal reveal-delay-3">
+        <div class="achievement-dot" aria-hidden="true"></div>
+        CodeChef — 2★ Rating (400+ Problems)
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT SECTION
+     ============================================================ -->
+<section id="contact" aria-labelledby="contact-heading">
+  <div class="container">
+    <div style="text-align:center;">
+      <p class="section-tag reveal">Contact</p>
+      <h2 class="section-title reveal reveal-delay-1" id="contact-heading">
+        Let's build something<span class="gradient-text"> together.</span>
+      </h2>
+      <p class="reveal reveal-delay-2" style="color:var(--muted-foreground);margin-top:0.75rem;font-size:1rem;">
+        Open to internships, collaborations, or just a good conversation about tech.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Info side -->
+      <div class="reveal reveal-delay-1">
+        <h3>Get in touch</h3>
+        <p>
+          Whether you have a project idea, an internship opportunity, or just want to geek out about
+          machine learning or cybersecurity — my inbox is always open!
+        </p>
+        <div class="contact-link-list">
+          <a href="mailto:lakshmipandranki006@gmail.com" class="contact-link-item glass" aria-label="Send email to Lakshmi">
+            <div class="contact-link-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="contact-link-label">Email</div>
+              <div class="contact-link-value">lakshmipandranki006@gmail.com</div>
+            </div>
+          </a>
+          <a href="https://leetcode.com/u/CS24345A0512/" target="_blank" rel="noopener" class="contact-link-item glass" aria-label="LeetCode profile">
+            <div class="contact-link-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M13.483 0a1.374 1.374 0 00-.961.438L7.116 6.226a1.374 1.374 0 00-.161 1.923l5.854 5.854a1.375 1.375 0 001.923-.161l5.789-5.789a1.375 1.375 0 00-.161-1.923L14.444.438a1.374 1.374 0 00-.961-.438zM10.881 7.429L5.956 12.354l4.926 4.925 4.924-4.925-4.925-4.925zm7.675 2.925l-4.924 4.925 4.924 4.925 4.925-4.925-4.925-4.925z"/></svg>
+            </div>
+            <div>
+              <div class="contact-link-label">LeetCode</div>
+              <div class="contact-link-value">300+ Problems Solved</div>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/lakshmi-pandranki-721072331/" target="_blank" rel="noopener" class="contact-link-item glass" aria-label="LinkedIn profile">
+            <div class="contact-link-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </div>
+            <div>
+              <div class="contact-link-label">LinkedIn</div>
+              <div class="contact-link-value">lakshmi-pandranki-721072331</div>
+            </div>
+          </a>
+          <a href="https://www.codechef.com/users/lakshmi_eswar" target="_blank" rel="noopener" class="contact-link-item glass" aria-label="CodeChef profile">
+            <div class="contact-link-icon" aria-hidden="true">👨‍💻</div>
+            <div>
+              <div class="contact-link-label">CodeChef</div>
+              <div class="contact-link-value">lakshmi_eswar — 2★ Rating</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Form side -->
+      <div class="contact-form glass reveal reveal-delay-2">
+        <!-- Success overlay -->
+        <div id="form-success" class="form-success" role="status" aria-live="polite">
+          <div class="form-success-icon" aria-hidden="true">✓</div>
+          <h3 style="font-family:'DM Serif Display',serif;font-size:1.5rem;font-weight:400;margin-bottom:0.5rem;">Message Sent!</h3>
+          <p style="color:var(--muted-foreground);font-size:0.9rem;">I'll get back to you shortly. Promise! 🙌</p>
+        </div>
+
+        <form id="form-element" novalidate aria-label="Contact form">
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label" for="inp-name">Name</label>
+              <input class="form-input" id="inp-name" name="name" type="text" placeholder="Your name" autocomplete="name" />
+              <span class="form-error" id="name-error" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="inp-email">Email</label>
+              <input class="form-input" id="inp-email" name="email" type="email" placeholder="your@email.com" autocomplete="email" />
+              <span class="form-error" id="email-error" role="alert"></span>
+            </div>
+          </div>
+          <div class="form-group" style="margin-top:1rem;">
+            <label class="form-label" for="inp-subject">Subject</label>
+            <input class="form-input" id="inp-subject" name="subject" type="text" placeholder="Internship opportunity / Collaboration / General" />
+            <span class="form-error" id="subject-error" role="alert"></span>
+          </div>
+          <div class="form-group" style="margin-top:1rem;">
+            <label class="form-label" for="inp-message">Message</label>
+            <textarea class="form-input" id="inp-message" name="message" rows="5" placeholder="Tell me about your project or opportunity..."></textarea>
+            <span class="form-error" id="message-error" role="alert"></span>
+          </div>
+          <button type="submit" class="btn-submit" aria-label="Send message">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4z"/><path d="m22 2-11 11"/></svg>
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <span class="footer-logo">lakshmi<span class="gradient-text">.</span>dev</span>
+    <span class="footer-copy">© 2025 Pandranki Lakshmi · Made with ❤️ in Rajam, AP</span>
+    <nav class="footer-links" aria-label="Footer links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- ── EmailJS Library ── -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
+
+<!-- ── Main JS ── -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
